@@ -1,4 +1,4 @@
-"""photomap URL Configuration
+"""tweetme URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from photo.views import (
+    photo_detail_view,
+    home_view
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home_view),
+    path('photo/<int:photo_id>', photo_detail_view)
 ]
